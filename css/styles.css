@@ -137,5 +137,10 @@ a.custom-card:hover {
 }
 
 .checked {
-  color: orange;
+  color: rgb(238, 46, 174);
+}
+
+span {
+  color: rgba(238, 46, 174, 0.25);
+  
 }
