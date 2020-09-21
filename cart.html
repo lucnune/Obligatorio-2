@@ -40,14 +40,16 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <div class="logged-as py-2 d-none d-md-inline-block">
-          <span>Logeado</span>
-          <div class="logout-button">
-            Cerrar sesión
-          </div>
-        </div>
-    </div>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Usuario
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>          
+          <a class="dropdown-item" href="#">Mi perfil</a>
+          <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+        </ul>
+
   </nav>
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
