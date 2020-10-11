@@ -48,6 +48,7 @@ function showProductComments(){
     document.getElementById("productComments").innerHTML = htmlContentToAppend;
 }
 
+//Puntuacion
 function showProductScore(score){
     var comentarioEstrellas = "";
 
@@ -105,6 +106,69 @@ function showProductScore(score){
     }
 }
 
+//Funcion para los productos relacionados (todavia no funciona)
+function showRelatedProducts(){
+    let htmlContentToAppend = `
+    <div id="carouselExampleCaptions" class="carousel slide container-fluid" data-ride="carousel">
+    <div class="carousel-inner">`;
+    let primero = true;
+    for(let i = 0; i < productosTodos.length; i++){
+        let productoActual = productosTodos[i];
+        let idProducto = i;
+    
+        for(let j = 0; j < product.relatedProducts.length; j++){
+            let idProductoRelacionado = product.relatedProducts[j];
+            if (idProducto === idProductoRelacionado){
+                if (primero){
+                    htmlContentToAppend += `
+                    <div class="carousel-item active">
+                        <img src="` + productoActual.imgSrc + `" class="d-block w-100" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="texto-carousel">` + productoActual.name + `</h5>
+                            <p class="texto-carousel">Precio: ` + productoActual.cost + ` ` + productoActual.currency + `</p>
+                        </div>
+                    </div>
+                    `;
+                    primero = false;
+                } else {
+                    htmlContentToAppend += `
+                    <div class="carousel-item">
+                        <img src="` + productoActual.imgSrc + `" class="d-block w-100" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="texto-carousel">` + productoActual.name + `</h5>
+                            <p class="texto-carousel">Precio: ` + productoActual.cost + ` ` + productoActual.currency + `</p>
+                        </div>
+                    </div>
+                    `;
+                }
+            }
+        }
+    }
+    htmlContentToAppend += `
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>`   
+    document.getElementById("relatedProducts").innerHTML = htmlContentToAppend; 
+}
+
+//Toma la información del JSON
+    getJSONData(PRODUCTS_URL).then(function(resultObj3){
+        if (resultObj3.status === "ok")
+        {
+            productosTodos = resultObj3.data;
+
+            showRelatedProducts();
+        }
+    });
+
+ //Funcion para activar comentarios
 function enviarComentario(){
     let comentarioAEnviar = {
         user:document.getElementById("comentarioUsuario").value,
@@ -133,7 +197,6 @@ function Fecha(){
 }
 
 //Descripcion del producto
-
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
         if (resultObj.status === "ok")
@@ -150,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             productCountHTML.innerHTML = product.soldCount;
             productPriceHTML.innerHTML = product.currency + " " + product.cost;
             
-            showImagesGallery(product.images);  //Imagenes del auto
+            showImagesGallery(product.images); //Imagenes del auto
         }
     });
     
