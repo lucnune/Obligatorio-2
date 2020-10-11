@@ -1,16 +1,10 @@
-const CATEGORIES_URL =
-    'https://japdevdep.github.io/ecommerce-api/category/all.json';
-const PUBLISH_PRODUCT_URL =
-    'https://japdevdep.github.io/ecommerce-api/product/publish.json';
-const CATEGORY_INFO_URL =
-    'https://japdevdep.github.io/ecommerce-api/category/1234.json';
-const PRODUCTS_URL =
-    'https://japdevdep.github.io/ecommerce-api/product/all.json';
-const PRODUCT_INFO_URL =
-    'https://japdevdep.github.io/ecommerce-api/product/5678.json';
-const PRODUCT_INFO_COMMENTS_URL =
-    'https://japdevdep.github.io/ecommerce-api/product/5678-comments.json';
-const CART_INFO_URL = 'https://japdevdep.github.io/ecommerce-api/cart/987.json';
+const CATEGORIES_URL = 'https://japdevdep.github.io/ecommerce-api/category/all.json';
+const PUBLISH_PRODUCT_URL ='https://japdevdep.github.io/ecommerce-api/product/publish.json';
+const CATEGORY_INFO_URL ='https://japdevdep.github.io/ecommerce-api/category/1234.json';
+const PRODUCTS_URL ='https://japdevdep.github.io/ecommerce-api/product/all.json';
+const PRODUCT_INFO_URL = 'https://japdevdep.github.io/ecommerce-api/product/5678.json';
+const PRODUCT_INFO_COMMENTS_URL = 'https://japdevdep.github.io/ecommerce-api/product/5678-comments.json';
+const CART_INFO_URL = 'https://japdevdep.github.io/ecommerce-api/cart/654.json'; //esta solo el pino, cambiarlo para el desafiate
 const CART_BUY_URL = 'https://japdevdep.github.io/ecommerce-api/cart/buy.json';
 
 let loggedText;
@@ -52,8 +46,10 @@ var getJSONData = function (url) {
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+
 document.addEventListener('DOMContentLoaded', function (e) {
-    
+    var  usuario_actual  =  localStorage . getItem ( "nombre_usuario" ) ;
+    documento . getElementById ( "usuario" ) . innerText  =  usuario_actual ;   
 });
 
 function logout() {
