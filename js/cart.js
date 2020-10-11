@@ -1,6 +1,3 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
 var itemsCarrito = {};
 var itemActual;
 var subtotalFinal;
@@ -75,11 +72,9 @@ function mostrarDireccion(mostrar){
         document.getElementById("direccion").innerHTML=`
         <form>
             <div class="form-group">
-                <label for="inputAddress">Dirección</label>
                 <input type="text" class="form-control" id="inputAddress" placeholder="Dirección..." required>
             </div>
             <div class="form-group">
-                <label for="inputAddress2">Info adicional dirección</label>
                 <input type="text" class="form-control" id="inputAddress2" placeholder="Numero de puerta..." required>
             </div>
             <div class="form-row">
