@@ -43,6 +43,33 @@ var getJSONData = function (url) {
         });
 };
 
+function cerrarSesion() {
+    sessionStorage.removeItem("nombre_usuario");
+    borrarCampos(1);
+    window.location.href = "index.html";
+  }
+  
+//Función para vaciar los campos
+function borrarCampos(opcion) {
+    if (opcion) {
+      sessionStorage.removeItem("datos_usuario");
+    } else {
+      var confirmacion = confirm("¿Borrar todos los campos (borrara también lo guardado)?");
+      if (confirmacion) {
+        var datos_formulario = document.getElementsByClassName("form-control");
+        for (let i = 0; i < datos_formulario.length; i++) {
+          let datos_formulario_actual = datos_formulario[i];
+          if (datos_formulario_actual.id !== "idState") {
+            datos_formulario_actual.value = "";
+          } else {
+            datos_formulario_actual.value = "Elegir...";
+          }
+        }
+        sessionStorage.removeItem("datos_usuario");
+      }
+    }
+  }
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
