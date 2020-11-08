@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
-
-
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
@@ -37,29 +33,142 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="index-main.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div class="logged-as py-2 d-none d-md-inline-block">
-        <span>Logeado</span>
-        <div class="logout-button">
-          Cerrar sesión
+      <div class="btn-group">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Usuario
+          <span class="caret"></span></button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar sesión</a>
         </div>
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Perfil</h2>
+      <p class="lead">Datos de  usuario.</p>
     </div>
-  </div>
+    <hr>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-8 order-md-1">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputName">Nombre</label>
+                <input type="text" class="form-control" id="inputName" placeholder="nombre">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputLastName">Apellido</label>
+                <input type="text" class="form-control" id="inputLastName" placeholder="apellido">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-10">
+                <label for="inputEmail">Email</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                  </div>
+                  <input type="email" class="form-control" id="inputEmail" placeholder="email">
+                </div>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputAge">Edad</label>
+                <input type="number" class="form-control" id="inputAge" placeholder="edad">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputTelephone">Teléfono</label>
+                <input type="text" class="form-control" id="inputTelephone" placeholder="tel...">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputCellphone">Celular</label>
+                <input type="text" class="form-control" id="inputCellphone" placeholder="cel...">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Dirección</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="calle...">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Info adicional</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, piso...">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Ciudad</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="Montevideo">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">Departamento</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Elegir...</option>
+                  <option>Artigas</option>
+                  <option>Canelones</option>
+                  <option>Cerro Largo</option>
+                  <option>Colonia</option>
+                  <option>Durazno</option>
+                  <option>Flores</option>
+                  <option>Florida</option>
+                  <option>Lavalleja</option>
+                  <option>Maldonado</option>
+                  <option>Montevideo</option>
+                  <option>Paysandú</option>
+                  <option>Río Negro</option>
+                  <option>Rivera</option>
+                  <option>Rocha</option>
+                  <option>Salto</option>
+                  <option>San José</option>
+                  <option>Soriano</option>
+                  <option>Tacuarembó</option>
+                  <option>Treinta y Tres</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Código postal</label>
+                <input type="text" class="form-control" id="inputZip" placeholder="11100">
+              </div>
+            </div>
+
+            <!--Botones para guardar los datos-->
+            <hr>
+            <button type="button" class="btn btn-primary" onclick="guardarDatos()">Guardar</button>
+            <button type="button" class="btn btn-danger" onclick="borrarCampos(0)">Borrar</button>
+          </form>
+          <hr>
+
+            <!--Foto de perfil-->
+          <h5>Foto del usuario: </h5>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-5">
+                    <!--Poner la opcion BBCode completa enlazada y borrar la url-->
+                  <img id="fotoUsuario" src="https://i.ibb.co/MCKxC0B/images.jpg" alt="THANY" class="img-fluid img-thumbnail rounded mx-auto d-block">
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-3">
+                  <button type="button" class="btn btn-dark"onclick="cambiarFoto()">Cambiar foto de perfil</button>
+                </div>
+              </div>
+            </div>          
+        </div>
+      </div>
+    </div>
+  </main>
   <footer class="text-muted bg-light">
     <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
@@ -78,6 +187,7 @@
       <div></div>
     </div>
   </div>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
